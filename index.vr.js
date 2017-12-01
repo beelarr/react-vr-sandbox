@@ -1,5 +1,6 @@
 import React from 'react';
 import GazeButton from 'react-vr-gaze-button'
+import Button from './button';
 
 import {
   AppRegistry,
@@ -10,15 +11,15 @@ import {
 } from 'react-vr';
 
 export default class Skyboxes extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            buttonIsClicked: false
-        }
-    }
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         buttonIsClicked: false
+    //     }
+    // }
 
   render() {
-      const {buttonIsClicked} = this.state;
+      // const {buttonIsClicked} = this.state;
 
       return (
       <View>
@@ -30,20 +31,22 @@ export default class Skyboxes extends React.Component {
                   transform: [{translate: [ 0, 0, -3]}],
               }}
           >
-        <GazeButton onClick={() => this.setState({buttonIsClicked: true})} duration={2000}
-            style={{
-                flex: 1,
-                backgroundColor: '1AC8F7',
-                height: 0.3,
-                layoutOrigin: [0.5, 0.5],
-            }}>
-            {time => (
 
-                <Text>
-                    {buttonIsClicked ? 'You have clicked me' : `Gaze me for ${time} milliseconds`}
-                </Text>
-            )}
-        </GazeButton>
+              <Button />
+        {/*<GazeButton onClick={() => this.setState({buttonIsClicked: true})} duration={1000}*/}
+            {/*style={{*/}
+                {/*flex: 1,*/}
+                {/*backgroundColor: '1AC8F7',*/}
+                {/*height: 0.3,*/}
+                {/*layoutOrigin: [0.5, 0.5],*/}
+            {/*}}>*/}
+            {/*{time => (*/}
+
+                {/*<Text>*/}
+                    {/*{this.state.buttonIsClicked ? 'You have clicked me' : `Gaze at me for ${time/1000} sec`}*/}
+                {/*</Text>*/}
+            {/*)}*/}
+        {/*</GazeButton>*/}
 
           </View>
       </View>
